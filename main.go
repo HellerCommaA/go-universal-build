@@ -4,14 +4,37 @@ import (
 	"bytes"
 	"fmt"
 	"log"
+	"os"
 	"os/exec"
-	//"strings"
+	"testProject/CommandRunner"
 )
 
 func main() {
+	var cmd (exec.Cmd)
 	//cmd := exec.Command("ping", "-c 3", "google.com")
-	cmd := run_cmd("ping", "-c 3", "google.com");
-	//cmd.Stdin = strings.NewReader("some input")
+	arg1 := ""
+	arg2 := ""
+	if len(os.Args) > 0 {
+		if os.Args[1] != "" {
+
+			arg1 = os.Args[1]
+
+			if os.Args[2] != "" {
+				// nested otherwise out of range
+
+				arg2 = os.Args[2]
+
+			}
+
+		}
+	}
+
+
+	if arg1 != "" && arg2 != "" {
+		cmd = commandrunner.Run_cmd(arg1, "-c 3", arg2)
+	} else {
+		cmd = commandrunner.Run_cmd("ping", "-c 3", "google.com")
+	}
 	var out bytes.Buffer
 	cmd.Stdout = &out
 	err := cmd.Run()
@@ -19,11 +42,4 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Printf("in all caps: %q\n", out.String())
-}
-
-func run_cmd (cmd_input string, ... string) *exec.Cmd {
-	cmd := exec.Command(cmd_input);
-	for {
-	}
-	return cmd;
 }

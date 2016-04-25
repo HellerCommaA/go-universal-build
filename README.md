@@ -9,3 +9,23 @@ This started as an idea I had while trying to come up with something for work to
 
 # Changelog
 v 0.0.1 -- Initial commits -- Will not run or do much of anything. Working on figuring out Go.
+
+
+# goenv
+`
+GOARCH="amd64"
+GOBIN=""
+GOEXE=""
+GOHOSTARCH="amd64"
+GOHOSTOS="darwin"
+GOOS="darwin"
+GOPATH="/Users/adam/golang"
+GORACE=""
+GOROOT="/usr/local/opt/go/libexec"
+GOTOOLDIR="/usr/local/opt/go/libexec/pkg/tool/darwin_amd64"
+GO15VENDOREXPERIMENT="1"
+CC="clang"
+GOGCCFLAGS="-fPIC -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fno-common"
+CXX="clang++"
+CGO_ENABLED="1"
+`
