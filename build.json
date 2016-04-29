@@ -1,0 +1,21 @@
+{
+  "Build": [{
+    "Language": "c",
+    "BuildTool": "gcc",
+    "Directory": "~/test/",
+    "Args": [
+      "test.c",
+      "-o",
+      "test"
+    ]
+  },{
+    "Language": "c++",
+    "BuildTool": "gcc",
+    "Directory": "~/testCPP/",
+    "Args": [
+      "testCPP.c",
+      "-o",
+      "testCPP"
+    ]
+  }]
+}
